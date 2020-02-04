@@ -13,11 +13,13 @@ void setup() {
 
 void loop() {
   // if the button is pressed, do a cycle of servo motor sweep
-  if(digitalRead(buttonPin) == HIGH) {
-      digitalWrite(12, LOW); // make sure DC motor is not spinning
-      
-      // taken from arduino example sweep
-      for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+  if (digitalRead(buttonPin) == HIGH)
+  {
+    digitalWrite(12, LOW); // make sure DC motor is not spinning
+
+    // taken from arduino example sweep
+    for (pos = 0; pos <= 180; pos += 1)
+    {                                  // goes from 0 degrees to 180 degrees
       myservo.write(pos);              // tell servo to go to position in variable 'pos'
       delay(15);                       // waits 15ms for the servo to reach the position
     }
